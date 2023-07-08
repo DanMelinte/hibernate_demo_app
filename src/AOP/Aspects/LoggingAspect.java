@@ -4,12 +4,14 @@ package AOP.Aspects;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
+@Order(10)
 public class LoggingAspect {
-
+/*
     @Pointcut("execution(* AOP.*.*(..))")
     private void AllMethods() {}
 
@@ -19,10 +21,7 @@ public class LoggingAspect {
     @Before("AllMethods() && !returnMagazine()")
     public void allMethodsException() {
         System.out.println("log: All methods except returnMagazine");
-    }
-
-
-
+    }*/
 /*
 
     @Pointcut("execution(* AOP.*.get*(..))")
@@ -45,15 +44,10 @@ public class LoggingAspect {
     }
 */
 
-/*    @Pointcut("execution(* *(..))")
-    private void allGetMethods() {
-        System.out.println("Do something");
-    }
-
-    @Before("allGetMethods()")
+    @Before("AOP.Aspects.MyPointcuts.allGetMethods()")
     public void beforeGetLogAdvice() {
-        System.out.println("log: try to get Book or Magazin");
-    }*/
+        System.out.println("- log: try to get something");
+    }
 
 }
 
