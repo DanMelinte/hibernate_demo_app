@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Order(20)
 public class SecurityAspect {
-    @Before("AOP.Aspects.MyPointcuts.allGetMethods()")
-    public void beforeGetSecurityAdvice() {
+    @Before("AOP.Aspects.MyPointcuts.allAddMethods()")
+    public void beforeAddSecurityAdvice() {
         System.out.println("- sec: try to access");
     }
 }

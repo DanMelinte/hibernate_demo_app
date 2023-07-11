@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Order(30)
 public class ExceptionAspect {
 
-    @Before("AOP.Aspects.MyPointcuts.allGetMethods()")
-    public void beforeGetExceptionAdvice() {
-        System.out.println("- exc: throw a exception");
+    @Before("AOP.Aspects.MyPointcuts.allAddMethods()")
+    public void beforeAddExceptionAdvice() {
+        System.out.println("- exc: handle a exception");
     }
 }
